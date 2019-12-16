@@ -6,7 +6,7 @@ A University Management System built using Django framework. It is designed for 
 Python and Django need to be installed
 
 ```bash
-pip install django
+python -m pip install django
 ```
 
 # UMS
@@ -18,7 +18,9 @@ A University Management System built using Django framework. It is designed for 
 Python and Django need to be installed
 
 ```bash
-pip install django
+python -m pip install django
+
+python -m pip install --upgrade pip
 ```
 
 ## Usage
