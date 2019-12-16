@@ -1,0 +1,27 @@
+
+
+SELECT * FROM info_assign;
+SELECT * FROM info_assigntime;
+SELECT * FROM info_attendance;
+SELECT * FROM info_attendanceclass;
+SELECT * FROM info_attendancetotal;
+SELECT * FROM info_class;
+SELECT * FROM info_course;
+SELECT * FROM info_dept;
+SELECT * FROM info_marks;
+SELECT * FROM info_marksclass;
+SELECT * FROM info_student;
+SELECT * FROM info_studentcourse;
+SELECT * FROM info_teacher;
+SELECT * FROM info_user;
+SELECT * FROM info_user_groups;
+SELECT * FROM info_user_user_permissions;
+
+SELECT * FROM auth_group;
+SELECT * FROM auth_group_permissions;
+SELECT * FROM auth_permission;
+
+SELECT * FROM django_admin_log;
+SELECT * FROM django_content_type;
+SELECT * FROM  django_migrations;
+SELECT * FROM django_session;

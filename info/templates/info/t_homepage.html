@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <link rel="icon" href="https://web.saumag.edu/wp-content/themes/sau-cce2/images/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta name="description" content="SAU Management System">
+    <meta name="author" content="Zakeer,Rudresh,Lohita,Sharmila">
+    <title>SAU Management System - Teachers Dashboard</title>
+    <!--===============================================================================================-->
+    {% load static %}
+    <!-- Bootstrap core CSS -->
+    <link href="{% static '/info/homepage/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <!--===============================================================================================-->
+    <!-- Custom styles for this template -->
+    <link href="{% static '/info/homepage/css/heroic-features.css' %}" rel="stylesheet">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" href="{% static '/info/bootstrap/css/ztyle.css' %}"/>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" href="{% static '/info/bootstrap/css/font-awesome.min.css' %}"/>
+    <!--===============================================================================================-->
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'index' %}"><img src="{% static '/info/images/sau-logo.png' %}" width="40%"
+                                                              height="40%"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-capitalize">{{ request.user.teacher.name }}&nbsp;<img
+                            src="{% static '/info/images/teacher.png' %}"></a>
+
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Banner -->
+<section id="banner" style="background:#013088!important">
+    <div class="inner">
+        <header>
+            <h1>Welcome {{ request.user.teacher.name }}</h1>
+            <p>The SAU Office of Human Resources proudly provides courteous and timely support to the University community by serving the faculty and staff in the recruitment and retention of qualified employees, providing insurance and benefits services, and facilitating employee relations.<br/>
+                Visit for more <a target="_blank" href="https://web.saumag.edu/">Click here</a> Our website</p>
+        </header>
+
+    </div>
+</section>
+<!-- /.Banner -->
+
+<div id="main">
+    <div class="inner">
+
+        <!-- Boxes -->
+        <div class="thumbnails">
+
+            <div class="box">
+                <a href="{% url 't_clas' request.user.teacher.id 1 %}" class="image fit"><img
+                        src="{% static 'info/images/t_attendance.jpg' %}" alt=""/></a>
+                <div class="inner">
+                    <h3>Attendance</h3>
+                    <p style="color:white!important">Enter the attendance of the students based on the class they are
+                        in. There is
+                        also
+                        the provision to edit the attendance of a whole class or student individually.</p>
+                    <a href="{% url 't_clas' request.user.teacher.id 1 %}" class="button fit"
+                       data-poptrox="youtube,800x400">Enter</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <a href="{% url 't_clas' request.user.teacher.id 1 %}" class="image fit"><img
+                        src="{% static 'info/images/t_marks.jpg' %}" alt=""/></a>
+                <div class="inner">
+                    <h3>Marks</h3>
+                    <p style="color:white!important">Enter the marks of the students based on the class they are in.
+                        This includes
+                        Quiz, Midterm and Final(SEE). The marks of the students can also be edited.</p>
+                    <a href="{% url 't_clas' request.user.teacher.id 1 %}" class="button style2 fit"
+                       data-poptrox="youtube,800x400">Enter</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <a href="{% url 't_timetable' request.user.teacher.id %}" class="image fit"><img
+                        src="{% static 'info/images/t_timetable.jpg' %}" alt=""/></a>
+                <div class="inner">
+                    <h3>Timetable</h3>
+                    <p style="color:white!important">View the timetable in a tabular form. For a particular class, it
+                        specifies a
+                        list of teachers who handle the same class that are free for that time slot.</p>
+                    <a href="{% url 't_timetable' request.user.teacher.id %}" class="button style3 fit"
+                       data-poptrox="youtube,800x400">View</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <a href="{% url 't_clas' request.user.teacher.id 3 %}" class="image fit"><img
+                        src="{% static 'info/images/reports.jpg' %}" alt=""/></a>
+                <div class="inner">
+                    <h3>Reports</h3>
+                    <p style="color:white!important">Generate reports for each class. These reports include generating a table
+                        consisting
+                        of the students belonging to that class and their respective CIE and Attendance.</p>
+                    <a href="{% url 't_clas' request.user.teacher.id 3 %}" class="button style2 fit"
+                       data-poptrox="youtube,800x400">Generate</a>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+
+<footer id="footer">
+    <div class="inner">
+        <p class="copyright">&copy; Sharmila, Zakeer, Rudresh, Lohita.</p>
+    </div>
+</footer>
+
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel" style="color:black">Ready to Leave?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-primary" href="/accounts/logout">Logout</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap core JavaScript -->
+
+
+<script src="{% static '/info/homepage/vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static '/info/homepage/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+</body>
+
+</html>

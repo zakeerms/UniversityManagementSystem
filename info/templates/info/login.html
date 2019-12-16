@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>SAU Management System - Login</title>
+    <link rel="icon" href="https://web.saumag.edu/wp-content/themes/sau-cce2/images/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="SAU Management System">
+    <meta name="author" content="Zakeer,Rudresh,Lohita,Sharmila">
+    <!--===============================================================================================-->
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/info/bootstrap/css/login.css' %}"/>
+    <!--===============================================================================================-->
+    <script>
+        $('input').attr('autocomplete', 'off');
+
+    </script>
+
+</head>
+<body class="login">
+
+<div style="height:250px">&nbsp;</div>
+<div>
+    <!-- BEGIN LOGIN FORM -->
+    <form class="login-form" method="POST">
+        {% csrf_token %}
+        <h1>Login</h1>
+        <div class="question">
+            <input type="text" name="username" autofocus="" required="" id="id_username"/>
+            <label>Username</label>
+        </div>
+        <div class="question">
+            <input type="password" name="password" required="" id="id_password"/>
+            <label>Password</label>
+        </div>
+
+
+        <button type="submit">Submit</button>
+
+
+    </form>
+
+</div>
+<p style="height:30px;">
+<div class="copyright" style="color: white">
+    © Zakeer, Rudresh, Lohita, Sharmila.
+</div>
+</p>
+</body>
+</html>

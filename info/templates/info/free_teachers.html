@@ -1,0 +1,29 @@
+{% load static %}
+<!--===============================================================================================-->
+<!-- Bootstrap core CSS-->
+<link href="{% static '/info/bootstrap/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+<!--===============================================================================================-->
+
+<link rel="stylesheet" type="text/css" href="{% static '/info/table/css/wrapper.css' %}">
+<div id="wrapper">
+    <div id="content-wrapper">
+        <div class="container-fluid">
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fas fa-table"></i>
+                    <b>List Of Free Teachers</b></div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <ul class="list-group">
+                            {% for t in ft_list %}
+                            <li class="list-group-item list-group-item-success">{{ t }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

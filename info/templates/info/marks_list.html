@@ -1,0 +1,44 @@
+{% extends 'info/base.html' %}
+    {% load static %}
+
+    {% block content %}
+                  <div class="card mb-3">
+            <div class="card-header">
+              <i class="fas fa-table"></i>
+            <b>Marks</b></div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                        <th style="font-size:13px!important;font-weight:bold">COURSE ID</th>
+                        <th style="font-size:13px!important;font-weight:bold">COURSE NAME</th>
+                        <th style="font-size:12px!important;font-weight:bold">QUIZ 1, ASSIGNMENT</th>
+                        <th style="font-size:12px!important;font-weight:bold">QUIZ 2, ASSIGNMENT</th>
+                        <th style="font-size:12px!important;font-weight:bold">QUIZ 3, ASSIGNMENT</th>
+                        <th style="font-size:13px!important;font-weight:bold">MIDTERM 1</th>
+                        <th style="font-size:13px!important;font-weight:bold">MIDTERM 2</th>
+                        <th style="font-size:13px!important;font-weight:bold">FINAL (SEE)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for sc in sc_list %}
+                    <tr>
+                        <td>{{ sc.course_id }}</td>
+                        <td>{{sc.course.name}}</td>
+                        {% for m in sc.marks_set.all %}
+                            <td>{{ m.marks1 }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% empty %}
+                            <p>student has no courses</p>
+                    {% endfor %}
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+
+    {% endblock %}
